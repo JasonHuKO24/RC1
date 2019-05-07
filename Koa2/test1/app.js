@@ -1,3 +1,160 @@
+// const koa = require('koa');
+// const app =new koa();
+// const {sign} = require('jsonwebtoken')
+// const secret = 'demo';
+// const jwt = require('koa-jwt')({secret});
+
+// router
+//       .post('/api/login',async (ctx,next) =>{
+//       const user = ctx.response.body;
+//         if (user && username) {
+//                 let {username} =user;
+//         const token = sign({username},secret, {expiresIn:'1h'});
+//         ctx.body={
+//                 message:'GET Token Success',
+//                 code:1,
+//                 token
+//         };
+//         } else{
+//                 ctx.body ={
+//                         message:'Param Error',
+//                         code:-1,
+//                 }
+//         }
+//       })
+//       .get('/api/userInfo',jwt, async ctx =>{
+//               ctx.body = {username: ctx.state.user.username};
+//       })
+//       .get('/api/adminInfo',jwt ,admin, async ctx =>{
+//               ctx.body= {username:ctx.state.username}
+//       })
+
+//       app.listen(3000);
+/**
+ * 16
+ */
+// const koa = require('koa');
+// const Router  =require('koa-router');
+// const app =new koa();
+
+// const router= new Router({
+//         prefix:'/users'
+// })
+
+// router.get('/',async(ctx,next)=>{
+//         ctx.response.body='<h1>response to /users</h1>'
+// })
+// router.get('/:pid',async(ctx,next)=>{
+//         ctx.response.body='<h1>response to /users/:id</h1>'
+// })
+
+
+// app.use(router.routes())
+// app.listen(3000);
+
+/**
+ * 15
+ */
+// const koa = require('koa');
+// const router  =require('koa-router');
+// const app =new koa();
+
+// const forums =new router();
+// const posts  =new router();
+
+// posts.get('/',async(ctx,next)=>{
+//         ctx.response.body='<h1>response to /forums/123/posts</h1>'
+// })
+// posts.get('/:pid',async(ctx,next)=>{
+//         ctx.response.body='<h1>response to /forums/123/posts/123</h1>'
+// })
+// forums.use('/forums/:fid/posts',posts.routes(),posts.allowedMethods())
+
+// app.use(forums.routes())
+// app.listen(3000);
+/**
+ * 14
+ */
+// const koa = require('koa')
+// const router =require('koa-router')();
+// const app = new koa();
+
+// router.get(
+//         '/users/:id',
+//         async (ctx,next)=>{
+//                 ctx.response.body='<h1>user page</h1>';
+//                 ctx.user={id:3, name:'xiaoming'}
+//                 await next();
+//         },
+//         async (ctx) =>{
+//                 console.log(ctx.user)
+//         }
+// )
+//     app.use(router.routes());
+//     app.listen(3000);
+/**
+ *13 
+ */
+// const Koa = require('koa');
+// const router = require('koa-router')();
+// const app =new Koa();
+
+// router.get('/',async(ctx,next) =>{
+//         ctx.response.body='<h1>index page<h1>'
+//         await next();
+// })
+// router.all('/',async(ctx,next) =>{
+//         console.log('match "all" method')
+//         await next();
+// })
+// app.use(router.routes());
+
+// app.listen(3000)
+
+/**
+ * 12
+ */
+// const koa = require('koa');
+// const Router =require('koa-router')
+// const app = new koa();
+
+// const router = new Router();
+// router
+//       .get('/', async (ctx,next) =>{
+//               ctx.body='hello world';
+//       })
+//       .post('/users', async (ctx,next) =>{
+//               //增加用户
+//       })
+//       .put('/users/:id',async (ctx,next) =>{
+//               //修改对应Id用户信息
+//       })
+//       .del('/user/:id', async (ctx,next) =>{
+//               //删除对应ID用户信息
+//       })
+//       .all('/users/:id', async(ctx,next) =>{
+//               //...
+//       })
+//       app.use(router.routes())
+//       app.listen(3000)
+
+/**
+ * 11
+ */
+// const koa = require('koa');
+// const app = new koa();
+// app.use(async (ctx,next) =>{
+//      const{ url,method}=ctx;
+//      if(url ==='/404' && method ==='GET'){
+//         ctx.body = 'Page Not Found';
+//         ctx.status = 404;
+//      }else {
+//              ctx.body = 'Default Content';
+//      }
+//      await next()
+// })
+
+// app.listen(3000);
 /**
  * 10
  */
@@ -191,7 +348,7 @@
 // app.listen(3000);
 
 /**
- * ctx.response.redirect(url,[alt])
+// ctx.response.redirect(url,[alt])
  */
 
 /**
