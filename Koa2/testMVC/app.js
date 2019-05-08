@@ -1,9 +1,14 @@
 const koa =require('koa');
-const bodyparser =require('koa-bodyparser');
+const path = require('path')
+
 const app = new koa();
-const router = require('koa-router');
+const router = require('./router')
+const middleware = require('./middleware')
 
-app.use(bodyparser());
-router(app);
 
-app.listen(3000);
+middleware(app)
+router(app)
+
+app.listen(3000 ,() =>{
+    console.log('server is running')
+});

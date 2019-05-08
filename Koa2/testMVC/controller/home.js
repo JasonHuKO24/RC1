@@ -1,25 +1,31 @@
+const HomeService = require('../service/home')
 module.exports={
-    index: async(ctx,next)=>{
-        ctx.response.body = '<h1>index page</h1>';
-    },
+    index: async function (ctx, next) {
+        await ctx.render("home/index", {title: "iKcamp欢迎您"})
+      },
     home: async (ctx,next) =>{
-        console.log(ctx.request.query);
-        console.log(ctx.request.querystring);
+        ctx.send({status:200})
+        // ctx.response.body="<h1>HOME page</h1>"
     },
     homeParmas: async (ctx,next) =>{
         console.log(ctx.parmas);
         ctx.response.body ='<h1>HOME page</h1>'
     },
-    user: async (ctx,next) =>{
-        `
-    <form action="/user/register" method='post'>
-    <input name="name" type="text" placeholder="输入用户名:jasonhu" />
-    <br/>
-    <input name="password" type="text" placeholder="输入密码:123456" />
-    <br/>
-    <button>sumbit</button>
-    </form>
-    `
+    login: async (ctx,next) =>{
+      await ctx.render('home/login',{
+          btnName:'GoGoGo'
+      })
     },
-    login: async()
+    register: async function (ctx, next){
+        let params = ctx.request.body
+        let name = params.name
+        let password = params.password
+        let res = await HomeService.register(name,password) 
+        if(res.status == "-1"){
+          await ctx.render("home/login", res.data)
+        }else{
+          ctx.state.title = "个人中心"
+          await ctx.render("home/success", res.data)
+        }
+      }
 }
