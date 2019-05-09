@@ -1,0 +1,6 @@
+[2019-05-09T15:26:28.056] [ERROR] cheese - Cheese is too ripe!
+[2019-05-09T15:26:28.058] [FATAL] cheese - Cheese was breeding ground for listeria.
+[2019-05-09T15:37:42.556] [INFO] cheese - 响应时间为 0.067s
+[2019-05-09T15:37:47.861] [INFO] cheese - 响应时间为 0.004s
+[2019-05-09T15:56:04.949] [ERROR] cheese - something wrong
+[2019-05-09T15:56:04.976] [INFO] cheese - 响应时间为 0.042s

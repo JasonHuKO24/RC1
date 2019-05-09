@@ -1,0 +1,10 @@
+[2019-05-09T16:06:08.227] [ERROR] cheese - something wrong
+[2019-05-09T16:06:08.254] [INFO] cheese - 响应时间为 0.042s
+[2019-05-09T16:26:42.895] [ERROR] cheese - something wrong
+[2019-05-09T16:26:42.932] [INFO] cheese - 响应时间为 0.059s
+[2019-05-09T16:41:27.011] [ERROR] cheese - {"method":"GET","url":"/","host":"127.0.0.1:3000","message":"something wrong","userAgent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"}
+[2019-05-09T16:41:27.051] [INFO] cheese - {"method":"GET","url":"/","host":"127.0.0.1:3000","message":"响应时间为 0.057s","userAgent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"}
+[2019-05-09T17:15:34.313] [ERROR] cheese - {"method":"GET","url":"/user","host":"127.0.0.1:3000","message":"something wrong","userAgent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"}
+[2019-05-09T17:15:34.398] [INFO] cheese - {"method":"GET","url":"/user","host":"127.0.0.1:3000","message":"响应时间为 0.111s","userAgent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"}
+[2019-05-09T17:15:39.139] [ERROR] cheese - {"method":"GET","url":"/","host":"127.0.0.1:3000","message":"something wrong","userAgent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"}
+[2019-05-09T17:15:39.147] [INFO] cheese - {"method":"GET","url":"/","host":"127.0.0.1:3000","message":"响应时间为 0.011s","userAgent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"}

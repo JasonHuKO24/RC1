@@ -4,7 +4,7 @@ module.exports={
         await ctx.render("home/index", {title: "iKcamp欢迎您"})
       },
     home: async (ctx,next) =>{
-        ctx.send({status:200})
+        ctx.send({status:'200'})
         // ctx.response.body="<h1>HOME page</h1>"
     },
     homeParmas: async (ctx,next) =>{
