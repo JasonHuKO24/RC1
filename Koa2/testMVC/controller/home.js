@@ -20,7 +20,7 @@ module.exports={
         let params = ctx.request.body
         let name = params.name
         let password = params.password
-        let res = await HomeService.register(name,password) 
+        let res = await app.HomeService.register(name,password) 
         if(res.status == "-1"){
           await ctx.render("home/login", res.data)
         }else{
