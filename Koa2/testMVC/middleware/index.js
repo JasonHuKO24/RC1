@@ -1,7 +1,7 @@
 const path = require('path')
 const bodyparser = require('koa-bodyparser')
 const nunjucks = require('koa-nunjucks-2')
-const staticFiles =require('koa-static');
+const staticFiles =require('koa-static'); 
 const milog = require('./mi-log')
 const ip = require('ip')
 
@@ -16,7 +16,7 @@ app.use(nunjucks ({
     ext:'html', 
     path:path.join(__dirname,'../views'),//指定视图目录
     nunjucksConfig:{ 
-    trimBlocks:true
+    trimBlocks:true  
 }  //开启转义 
 }))
 app.use(miHttpError({

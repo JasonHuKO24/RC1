@@ -21,3 +21,4 @@ router.post('/user/register',HomeController.register)
 app.use(router.routes())
    .use(router.allowedMethods());
 }
+
