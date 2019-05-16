@@ -1,34 +1,31 @@
 const router = require('koa-router')();
-const userModel = require('../lib/mysql.js')
-const moment = require('moment')
-const checkNotLogin = require('../middlewares/check.js').checkNotLogin
-const checkLogin = require('../middlewares/check.js').checkLogin;
-const md = require('markdown-it')();  
+const controller = require('../controller/c-posts')
 
-router.get('/',async(ctx,next) =>{
-    ctx.redirect('/posts')
-})
-//文章页
-router.get('/posts',async(ctx,next) =>{
-    let res,
-    postsLength,
-    name =decodeURIComponent(ctx.request.querystring.spilt('=')[1]);
-    if(ctx.request.querystring){
-        console.log('ctx.request.querystring',name)
-        await userModel.findDataByUser(name)
-        .then(result =>{
-            res=result
-        })
-        await ctx.render('selfPosts',{
-            session:ctx.session,
-            posts:res,
-            postsPageLength:Math.ceil(postsLength / 10),
-        })
-    }else{
-        await userModel.findPostByPage(1)
-        .then(result =>{
-            res=result
-        })
-        await userModel.findAllPost
-    }
-})
+// 重置到文章页
+router.get('/', controller.getRedirectPosts)
+// 文章页
+router.get('/posts', controller.getPosts)
+// 首页分页，每次输出10条
+router.post('/posts/page', controller.postPostsPage)
+// 个人文章分页，每次输出10条
+router.post('/posts/self/page', controller.postSelfPage)
+// 单篇文章页
+router.get('/posts/:postId', controller.getSinglePosts)
+// 发表文章页面
+router.get('/create', controller.getCreate)
+// post 发表文章
+router.post('/create', controller.postCreate)
+// 发表评论
+router.post('/:postId',controller.postComment)
+// 编辑单篇文章页面
+router.get('/posts/:postId/edit', controller.getEditPage)
+// post 编辑单篇文章
+router.post('/posts/:postId/edit', controller.postEditPage)
+// 删除单篇文章
+router.post('/posts/:postId/remove', controller.postDeletePost)
+// 删除评论
+router.post('/posts/:postId/comment/:commentId/remove', controller.postDeleteComment)
+// 评论分页
+router.post('/posts/:postId/commentPage', controller.postCommentPage)
+
+module.exports = router
